@@ -18,18 +18,12 @@ const char* ssid = "Swamy";//your wifi ssid
 const char* password = "meesaswamy";//your password
 
 // CHANGE TO YOUR DEVICE CREDENTIALS AS PER IN IBM BLUMIX
-#define ORG "ujiha4"
-#define DEVICE_TYPE "Esp32"
+#define ORG "unneo9"
+#define DEVICE_TYPE "ESP32"
 #define DEVICE_ID "12345"
 #define TOKEN "12345678" //  Authentication Token OF THE DEVICE
 
 //  PIN DECLARATIONS 
-
-int led1 = 36;
-int led2 = 39;
-int led3 = 34;
-int led4 = 2;
-
 
 //-------- Customise the above values --------
 const char publishTopic[] = "iot-2/evt/Data/fmt/json";
@@ -52,10 +46,6 @@ void setup() {
   Serial.begin(115200);
   Serial.println();
 
-  pinMode(led1,OUTPUT);
-  pinMode(led2,OUTPUT);
-  pinMode(led3,OUTPUT);
-  pinMode(led4,OUTPUT);
  
   wifiConnect();
   mqttConnect();
@@ -134,66 +124,7 @@ void control_func()
 {
   Serial.println("You need to take " +command+ " medicine");
   
-  
-  if(command== "5")
- {
 
- digitalWrite(led1,LOW);
-      
-     Serial.println(".......lights are off..........");
-    
-  }
-  else if(command== "1")
-  {
-     digitalWrite(led1,HIGH);
-      
-     Serial.println(".......lights are on..........");
-
-  }
-  else if(command== "6")
- {
-
-
-      digitalWrite(led2,LOW);
-     Serial.println(".......lights are off..........");
-    
-  }
-  else if(command== "2")
-  {
-      digitalWrite(led2,HIGH);
-     Serial.println(".......lights are on..........");
-
-  }
-   else if(command== "7")
- {
-
-
-      digitalWrite(led3,LOW);
-     Serial.println(".......lights are off..........");
-    
-  }
-  else if(command== "3")
-  {
-    
-      digitalWrite(led3,HIGH);
-     Serial.println(".......lights are on..........");
-
-  }
-   else if(command== "8")
- {
-
-
-      digitalWrite(led4,LOW);
-     Serial.println(".......lights are off..........");
-    
-  }
-  else if(command== "4")
-  {
-     
-      digitalWrite(led4,HIGH);
-     Serial.println(".......lights are on..........");
-
-  }
     display.clearDisplay();
   display.setTextSize(1);
   display.setTextColor(WHITE);
